@@ -72,4 +72,6 @@ const twoSum = function TwoSum(nums, target) {
 //   }
 // };
 
+//utiliser includes de l'array + index of (start index après le current index)
+
 console.log(twoSum([2, 7, 11, 15], 18));
