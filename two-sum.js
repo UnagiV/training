@@ -36,15 +36,15 @@
 // Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
 
 //brute force
-const twoSum = function TwoSum(nums, target) {
-  for (let i = 0; i < nums.length; i++) {
-    for (let j = i + 1; j < nums.length; j++) {
-      if (nums[i] + nums[j] == target) {
-        return [i, j];
-      }
-    }
-  }
-};
+// const twoSum = function TwoSum(nums, target) {
+//   for (let i = 0; i < nums.length; i++) {
+//     for (let j = i + 1; j < nums.length; j++) {
+//       if (nums[i] + nums[j] == target) {
+//         return [i, j];
+//       }
+//     }
+//   }
+// };
 
 //Two-pass Hash Table
 // const twoSum = function (nums, target) {
@@ -61,17 +61,15 @@ const twoSum = function TwoSum(nums, target) {
 // };
 
 //One-pass Hash Table
-// const twoSum = function (nums, target) {
-//   const map = new Map();
-//   for (let i = 0; i < nums.length; i++) {
-//     const complement = target - nums[i];
-//     if (map.has(complement)) {
-//       return [map.get(complement), i];
-//     }
-//     map.set(nums[i], i);
-//   }
-// };
-
-//utiliser includes de l'array + index of (start index après le current index)
+const twoSum = function (nums, target) {
+  const map = new Map();
+  for (let i = 0; i < nums.length; i++) {
+    const complement = target - nums[i];
+    if (map.has(complement)) {
+      return [map.get(complement), i];
+    }
+    map.set(nums[i], i);
+  }
+};
 
 console.log(twoSum([2, 7, 11, 15], 18));
